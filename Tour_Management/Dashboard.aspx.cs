@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 namespace Tour_Management
 {
@@ -14,21 +9,33 @@ namespace Tour_Management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CalcNumberTour();
+         
+            CalcNumbers();
         }
 
 
-        protected void CalcNumberTour()
+        protected void CalcNumbers()
         {
             SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["TourManagement"].ConnectionString);
             con1.Open();
-            SqlCommand cmd1 = new SqlCommand("Select count(*) From Tour", con1);
-            var count1 = cmd1.ExecuteScalar();
-            Label1.Text = count1.ToString();
+
+            // Count tours
+            SqlCommand cmdTour = new SqlCommand("Select count(*) From Tour", con1);
+            int tourCount = (int)cmdTour.ExecuteScalar();
+            Label1.Text = tourCount.ToString();
+
+            // Count users
+            SqlCommand cmdUser = new SqlCommand("Select count(*) From UserT", con1);
+            int userCount = (int)cmdUser.ExecuteScalar();
+            Label2.Text = userCount.ToString();
+
+            // Count orders
+            SqlCommand cmdOrder = new SqlCommand("Select count(*) From OrderT", con1);
+            int orderCount = (int)cmdOrder.ExecuteScalar();
+            Label3.Text = orderCount.ToString();
+
             con1.Close();
-
         }
-
 
     }
 }

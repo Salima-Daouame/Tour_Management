@@ -30639,13 +30639,13 @@ div.tagsinput {
 
     .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .count-indicator .count {
         position: absolute;
-        left: 36%;
+        left: 44%;
         width: 12px;
-        height: 12px;
+        height: 6px;
         border-radius: 100%;
-        background: #4B49AC;
-        top: 1px;
-        border: 1px solid #ffffff;
+        /* background: #4B49AC; */
+        top: -7px;
+        border: 1px solid #ffffff
     }
 
     .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .count-indicator:after {
@@ -62825,13 +62825,15 @@ div.tagsinput {
 
     .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .count-indicator .count {
         position: absolute;
-        left: 36%;
+        left: 44%;
         width: 12px;
-        height: 12px;
+        height: 6px;
         border-radius: 100%;
-        background: #4B49AC;
-        top: 1px;
+        /* background: #4B49AC; */
+        top: -7px;
         border: 1px solid #ffffff;
+        font-weight: bold;
+        color: red
     }
 
     .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .count-indicator:after {

@@ -17,6 +17,7 @@ namespace Tour_Management
             {
                 BindGridView();
             }
+                
         }
 
         protected void BindGridView()

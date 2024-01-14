@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminProfile.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Tour_Management.Dashboard" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">    
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="main-panel">
          <div class="content-wrapper">
           <div class="row">
@@ -16,7 +14,8 @@
                  <div class="justify-content-end d-flex">
                   <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                     <button class="btn btn-sm btn-light bg-white" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Date of today
+                   <%-- Date of today--%>
+                         <span id="currentDateLabel"></span>
                     </button>
                   </div>
                  </div>
@@ -61,7 +60,7 @@
                   <div class="card card-dark-blue">
                     <div class="card-body">
                       <p class="mb-4">Nomber de Users</p>
-                      <p class="fs-30 mb-2">20</p>
+                      <p class="fs-30 mb-2"> <asp:Label  ID="Label2" runat="server" class="fs-30 mb-2"></asp:Label></p>
                       <img src="images/user.png" >
                     </div>
                   </div>
@@ -73,13 +72,12 @@
                   <div class="card card-light-blue">
                     <div class="card-body">
                       <p class="mb-4">Nomber Des Orders</p>
-                      <p class="fs-30 mb-2">3</p>
+                      <p class="fs-30 mb-2"><asp:Label  ID="Label3" runat="server" class="fs-30 mb-2"></asp:Label></p>
                        <img src="images/order.png" >
                     </div>
                   </div>
                 </div>
-
-                <div class="col-md-6 stretch-card transparent">
+<%--<div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
                     <div class="card-body">
                       <p class="mb-4"> Totale Des Orders</p>
@@ -87,7 +85,8 @@
                     <img src="images/order1.png" >
                     </div>
                   </div>
-                </div>
+                </div>--%>
+                
 
               </div>
             </div>
@@ -95,7 +94,13 @@
          </div>
          </div>
 
-       
-           
-</asp:Content>
+    <script>
 
+
+    var currentDate = new Date();
+    var formattedDate = currentDate.toISOString().split('T')[0];
+     document.getElementById("currentDateLabel").textContent = formattedDate;
+
+    </script>
+
+</asp:Content>
