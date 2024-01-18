@@ -795,7 +795,7 @@
                                 <li><a href="#guides" class="nav-link scroll-to">Guides</a></li>
                                 <li><a href="#new-tour" class="nav-link scroll-to">New Tour</a></li>
                                 <li><a href="#contact" class="nav-link scroll-to">Contact</a></li>
-                                <li><a href="Login.aspx" class="nav-link scroll-to">login</a></li>
+                                <%--<li><a href="Login.aspx" class="nav-link scroll-to">login</a></li>--%>
 
                             </ul>
                         </div>
